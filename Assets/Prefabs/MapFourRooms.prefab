@@ -9,7 +9,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 476172}
   - 61: {fileID: 6137136}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Chair (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25,7 +25,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 493442}
   - 61: {fileID: 6130386}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Chair
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,8 +41,38 @@ GameObject:
   m_Component:
   - 4: {fileID: 471648}
   - 61: {fileID: 6173474}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Chest
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &161974
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 421242}
+  m_Layer: 9
+  m_Name: BatSpawn4
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &163012
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 439770}
+  m_Layer: 9
+  m_Name: BatSpawn2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -57,8 +87,38 @@ GameObject:
   m_Component:
   - 4: {fileID: 458256}
   - 61: {fileID: 6158700}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Chair (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &192630
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 481930}
+  m_Layer: 9
+  m_Name: BatSpawn3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &193776
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 486570}
+  m_Layer: 9
+  m_Name: BatSpawn1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -73,7 +133,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 432712}
   - 61: {fileID: 6185158}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Chest (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -89,7 +149,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 425222}
   - 61: {fileID: 6161946}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Chest (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -106,7 +166,8 @@ GameObject:
   - 4: {fileID: 417728}
   - 212: {fileID: 21233348}
   - 68: {fileID: 6882132}
-  m_Layer: 0
+  - 114: {fileID: 11439504}
+  m_Layer: 9
   m_Name: MapFourRooms
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -129,8 +190,24 @@ Transform:
   - {fileID: 432712}
   - {fileID: 425222}
   - {fileID: 471648}
+  - {fileID: 486570}
+  - {fileID: 439770}
+  - {fileID: 481930}
+  - {fileID: 421242}
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!4 &421242
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 161974}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5, y: -2, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 417728}
+  m_RootOrder: 9
 --- !u!4 &425222
 Transform:
   m_ObjectHideFlags: 1
@@ -155,6 +232,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 417728}
   m_RootOrder: 3
+--- !u!4 &439770
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 163012}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3, y: 3, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 417728}
+  m_RootOrder: 7
 --- !u!4 &458256
 Transform:
   m_ObjectHideFlags: 1
@@ -191,6 +280,30 @@ Transform:
   m_Children: []
   m_Father: {fileID: 417728}
   m_RootOrder: 0
+--- !u!4 &481930
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 192630}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2, y: -4, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 417728}
+  m_RootOrder: 8
+--- !u!4 &486570
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 193776}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3, y: 2, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 417728}
+  m_RootOrder: 6
 --- !u!4 &493442
 Transform:
   m_ObjectHideFlags: 1
@@ -334,6 +447,23 @@ EdgeCollider2D:
   - {x: -5.9245195, y: -1.4141515}
   - {x: -5.8084316, y: 0.6855759}
   - {x: -9.490741, y: 0.67227453}
+--- !u!114 &11439504
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 195364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b78325cade3c04a0197d6cd13bac8765, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemySpawns:
+  - {fileID: 486570}
+  - {fileID: 439770}
+  - {fileID: 481930}
+  - {fileID: 421242}
+  Bat: {fileID: 158414, guid: b6c9246b6bcd64a068b0734a4311e428, type: 2}
 --- !u!212 &21233348
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -12,10 +12,26 @@ public class JoystickMovement : MonoBehaviour
 	[HideInInspector] //loockingRight wird im Inspector nicht angezeigt.
 	public bool lookingLeft = true;
 
+	//angriff
+	private bool attacking=false;
+	public Collider2D attackTrigger;
+
+	//target für bat
+	public GameObject Target {get; set;}
+
+
+
+	void Awake () {
+		//angriff
+		attackTrigger.enabled = !attackTrigger.enabled;
+	
+	}
+
 	void Start ()
 	{
 		rb2d = GetComponent<Rigidbody2D> (); //Reference auf das Componont
 		anim = GetComponent<Animator> ();
+
 
 	}
 
@@ -41,9 +57,33 @@ public class JoystickMovement : MonoBehaviour
 		if ((inputH > 0 && lookingLeft) || (inputH < 0 && !lookingLeft)) //Falls geht nach Rechts aber guckt nach Links (und umgekehrt)			
 			Flip ();
 
+
+		//angriff
+
 		if (CrossPlatformInputManager.GetButton ("Attack")) {
+
+//			attacking = true;
+//			attackTimer = attackCoolDown;
+//
+		attackTrigger.enabled = true;
+
+
 			anim.SetTrigger ("Attacking");
+
+			StartCoroutine("waitOneSecond");
+
+
+
+
+
+
 		}
+//		if (CrossPlatformInputManager.GetButtonDown ("Attack")) {
+//			attackTrigger.enabled = enabled;
+//
+//		}
+
+
 	}
 
 
@@ -54,4 +94,13 @@ public class JoystickMovement : MonoBehaviour
 		myScale.x = myScale.x * -1; //myScale.x *= -1;
 		transform.localScale = myScale;
 	}
+
+	IEnumerator waitOneSecond(){
+		yield return new WaitForSeconds (1);
+		attackTrigger.enabled = !attackTrigger.enabled;
+
+		
+	}
+
+
 }

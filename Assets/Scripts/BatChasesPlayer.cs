@@ -30,7 +30,7 @@ public class BatChasesPlayer : MonoBehaviour {
 
 
 		
-			Debug.Log (range);
+			//Debug.Log (range);
 
 			transform.position = Vector2.MoveTowards (transform.position, target.position, speed * Time.deltaTime);
 

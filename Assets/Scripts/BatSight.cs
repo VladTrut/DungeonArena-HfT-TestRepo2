@@ -27,7 +27,7 @@ public class BatSight : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D other) {
 		if (other.tag == "Player") {
 
-			Debug.Log ("Spieler ist is ichtweite!");
+			Debug.Log ("Spieler ist is Sichtweite!");
 
 			BatChasesPlayerEnabled ();
 

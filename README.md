@@ -1,7 +1,7 @@
 # DungeonArena
 
 Hi!
-This is the software project of Hochschule für Technick in Stuttgart. 
+This is the software project of Hochschule für Technik in Stuttgart. 
 We are making a simple RPG game for iOS and OS X.
 
 #Gameplay 

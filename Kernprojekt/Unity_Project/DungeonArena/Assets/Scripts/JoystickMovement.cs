@@ -2,7 +2,7 @@
 using System.Collections;
 using UnityStandardAssets.CrossPlatformInput; 
 
-public class JoistikMovement : MonoBehaviour {
+public class JoystickMovement : MonoBehaviour {
 
 	public float maxSpeed = 10.0f;
 

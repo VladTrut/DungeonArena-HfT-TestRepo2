@@ -1,0 +1,22 @@
+Spielerrollen: Monster, Nahkämpfer, Distanzkämpfer, Kämpfer.
+NPC (Non-Player Characters): Minimonster.
+
+Spielvorbereitung: Durch zufällige Kombination von x Map Areas wird eine Map generiert. Den Spielern wird zufällig eine Spielerrolle zugewiesen. Der Spieler mit der Rolle Monster wählt einen Monstertyp. Die Spieler werden zufällig auf der Map platziert.
+
+Spielziel: Das Monster gewinnt wenn alle Kämpfer ausgeschaltet sind. Die Kämpfer gewinnen wenn das Monster ausgeschaltet ist.
+
+Spielablauf: Die Kämpfer suchen einander um gemeinsam gegen das Monster zu kämpfen. Das Monster sucht die Kämpfer um sie auszuschalten. Wird ein Kämpfer ausgeschaltet, muss er innerhalb von x Sekunden wiederbelebt werden. Nach Ablauf der x Sekunden hat das Monster ebenfalls gewonnen. Hält sich das Monster in der Nähe einer Leiche auf, werden ihm pro Sekunde y Lebenspunkt abgezogen.
+
+Map: Eine Map Area ist ein Rechteck. Sie kann in bis zu vier Richtungen (oben, rechts, unten, links) verlassen werden. In ihr können sich unbewegliche Hindernisse, Minimonster, Minimonsterfabriken und Fallen (Explosion bei Übergang) befinden. Manche haben ein Portal, durch das ein Kämpfer zu einem anderen (zufälligen) Portal gelangt. Die Map muss nicht ein Rechteck ergeben.
+
+Kämpferfähigkeiten: Die Kämpfer haben Werte für Angriffsstärke und Verteidigung. Diese Werte können verbessert werden durch das Ausschalten von Minimonstern.
+
+Monsterfähigkeiten: Das Monster kann alle x Sekunden ein neues Minimonster platzieren. Es kann sich für x Sekunden in ein Minimonster verwandeln (dann Cooldown).
+
+Kooperationen:
+Kooperationen bei Übergängen zwischen Map Areas: Manche können nur geöffnet werden, wenn zwei Kämpfer zeitgleich zwei Schalter betätigen. Manche öffnen sich nur mithilfe der Nahkampf- oder Distanzwaffe.
+Kooperationen beim Kampf gegen das Monster: Das Monster hat ein Schild, der nur durch die Distanzwaffe und einen Kern, der nur durch die Nahkampfwaffe zerstört werden kann.
+
+Spielsicht: Für einen Spieler ist die Map Area sichtbar, in der er sich aktuell befindet. Einem Kämpfer wird durch Pfeile am Rand die Richtung angezeigt, in der sich die anderen Kämpfer befinden. Wird ein Kämpfer ausgeschaltet, wird dessen Richtungspfeil anders angezeigt. (Dem Monster werden die Kämpfer auf einer Minimap angezeigt.)
+
+Bedienung, Steuerung und UX: Bewegungssteuerung durch einen imaginären Stick in Form eines Kreises am Bildschirm (Richtungen: n, e, s, w, nw, ne, sw, se).

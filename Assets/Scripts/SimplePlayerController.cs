@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
+using UnityEngine.Networking;
 using System.Collections;
 
-public class SimplePlayerController : MonoBehaviour
+public class SimplePlayerController : NetworkBehaviour
 {
 
 	public float speed = 12f;
@@ -16,12 +17,17 @@ public class SimplePlayerController : MonoBehaviour
 	{
 		rb2d = GetComponent<Rigidbody2D> ();
 		anim = GetComponent<Animator> ();
-	}
+    }
 	
 	// Update is called once per frame
 	void Update ()
 	{
-		float x = Input.GetAxis ("Horizontal");
+        if (!isLocalPlayer)
+        {
+            return;
+        }
+
+        float x = Input.GetAxis ("Horizontal");
 		float y = Input.GetAxis ("Vertical");
 
 		// Flip if neccessairy
@@ -48,4 +54,10 @@ public class SimplePlayerController : MonoBehaviour
 		myScale.x = myScale.x * -1; //myScale.x *= -1;
 		transform.localScale = myScale;
 	}
+
+    //Initialisiert den lokalen Spieler. Kann dazu gebraucht werden die Kamera zu konfigurieren oder auch dem Spieler eine Spieler Charakter zu zuweisen.
+    public override void OnStartLocalPlayer()
+    {
+        //
+    }
 }

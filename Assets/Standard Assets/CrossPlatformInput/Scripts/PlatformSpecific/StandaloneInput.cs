@@ -13,7 +13,7 @@ namespace UnityStandardAssets.CrossPlatformInput.PlatformSpecific
 
         public override bool GetButton(string name)
         {
-            return Input.GetButton(name);
+           return Input.GetButton(name);
         }
 
 

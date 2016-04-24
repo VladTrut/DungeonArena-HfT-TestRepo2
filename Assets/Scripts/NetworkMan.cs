@@ -12,12 +12,16 @@ public class NetworkMan : NetworkManager
 	// Use this for initialization
 	void Start () 
 	{
+		Initialize ();
+	}
+
+	public void Initialize()
+	{
 		StartMatchMaker ();
 		matchMaker.SetProgramAppID ((UnityEngine.Networking.Types.AppID)998552);
 
 		//Find matches
 		matchMaker.ListMatches(0, int.MaxValue, "", OnMatchList);
-
 	}
 	
 	// Update is called once per frame

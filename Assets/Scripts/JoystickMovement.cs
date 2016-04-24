@@ -1,8 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityStandardAssets.CrossPlatformInput;
+using UnityEngine.Networking;
 
-public class JoystickMovement : MonoBehaviour
+public class JoystickMovement : NetworkBehaviour
 {
 
 	public float maxSpeed = 10.0f;
@@ -26,7 +27,12 @@ public class JoystickMovement : MonoBehaviour
 
 	void FixedUpdate () //fixierte Frame
 	{
-		float inputH = CrossPlatformInputManager.GetAxis ("Horizontal");
+        if (!isLocalPlayer)
+        {
+            return;
+        }
+
+        float inputH = CrossPlatformInputManager.GetAxis ("Horizontal");
 		float inputV = CrossPlatformInputManager.GetAxis ("Vertical");
 
 		Vector2 moveVec = new Vector2 (inputH, inputV) * maxSpeed;
@@ -41,7 +47,7 @@ public class JoystickMovement : MonoBehaviour
 		if ((inputH > 0 && lookingLeft) || (inputH < 0 && !lookingLeft)) //Falls geht nach Rechts aber guckt nach Links (und umgekehrt)			
 			Flip ();
 
-		if (CrossPlatformInputManager.GetButton ("Attack")) {
+        if (CrossPlatformInputManager.GetButton ("Attack")) {
 			anim.SetTrigger ("Attacking");
 		}
 	}
@@ -53,5 +59,11 @@ public class JoystickMovement : MonoBehaviour
 		Vector3 myScale = transform.localScale;
 		myScale.x = myScale.x * -1; //myScale.x *= -1;
 		transform.localScale = myScale;
-	}
+    }
+
+    //Networking: Initialisiert den lokalen Spieler. Beispielsweise Kamere konfigurieren, Spieler Charakter zuweisen, etc.
+    public override void OnStartLocalPlayer()
+    {
+        //
+    }
 }

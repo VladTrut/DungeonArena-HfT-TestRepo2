@@ -55,7 +55,7 @@ public class SimplePlayerController : NetworkBehaviour
 		transform.localScale = myScale;
 	}
 
-    //Initialisiert den lokalen Spieler. Kann dazu gebraucht werden die Kamera zu konfigurieren oder auch dem Spieler eine Spieler Charakter zu zuweisen.
+    //Initialisiert den lokalen Spieler. Kann dazu gebraucht werden die Kamera zu konfigurieren oder auch dem Spieler einen Charakter zu zuweisen.
     public override void OnStartLocalPlayer()
     {
         //

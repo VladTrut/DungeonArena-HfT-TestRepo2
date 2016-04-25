@@ -136,6 +136,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 479260}
+  - 95: {fileID: 9504278}
   m_Layer: 0
   m_Name: Box
   m_TagString: Untagged
@@ -288,6 +289,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 451302}
   m_RootOrder: 1
+--- !u!95 &9504278
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 164522}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1872ab20c75c54732bcb01369750f46d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!212 &21216412
 SpriteRenderer:
   m_ObjectHideFlags: 1

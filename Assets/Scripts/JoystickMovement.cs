@@ -7,8 +7,10 @@ public class JoystickMovement : NetworkBehaviour
 {
 
 	public float maxSpeed = 10.0f;
-
-	private Rigidbody2D rb2d;
+    public string mapObjectName = "";
+    public float spawnAreaAdaption = 10f; //Manuell spawn Area anpassen
+    
+    private Rigidbody2D rb2d;
 	private Animator anim;
 	[HideInInspector] //loockingRight wird im Inspector nicht angezeigt.
 	public bool lookingLeft = true;
@@ -61,9 +63,57 @@ public class JoystickMovement : NetworkBehaviour
 		transform.localScale = myScale;
     }
 
-    //Networking: Initialisiert den lokalen Spieler. Beispielsweise Kamere konfigurieren, Spieler Charakter zuweisen, etc.
+    //Networking: Initialisiert den lokalen Spieler.
     public override void OnStartLocalPlayer()
     {
-        //
+
+        var mapObject = GameObject.Find(mapObjectName);
+        SpriteRenderer renderer = mapObject.GetComponent<SpriteRenderer>();
+
+        float radius = renderer.bounds.extents.magnitude;
+        float maxXRandomSpawnPoint = radius - spawnAreaAdaption;
+        float minXRandomSpawnPoint = -radius + spawnAreaAdaption;
+        float maxYRandomSpawnPoint = radius - spawnAreaAdaption;
+        float minYRandomSpawnPoint = -radius + spawnAreaAdaption;
+
+        while (true)
+        {
+           float spawnX = Random.Range(minXRandomSpawnPoint, maxXRandomSpawnPoint);
+           float spawnY = Random.Range(minYRandomSpawnPoint, maxYRandomSpawnPoint);
+           bool isEmpty = false;
+           bool isGameArea = true; //wenn bereit, auf false aendern
+
+           Vector3 spawnPosition = new Vector3(spawnX, spawnY, 0);
+
+           isEmpty = IsEmptyPosition(spawnPosition);
+           //isGameArea = IsInGameArea(spawnPosition);
+
+            if (isEmpty && isGameArea)
+           {
+                transform.position = spawnPosition;
+                break;
+           }
+        }
+    }
+
+    public bool IsEmptyPosition(Vector3 targetPos)
+    {
+        GameObject[] allMovableThings = GameObject.FindGameObjectsWithTag("Physical"); //returns all game object with tag "Physical"
+        foreach (GameObject current in allMovableThings)
+        {
+            if (current.transform.position == targetPos)
+                return false;
+        }
+        return true;
+    }
+
+    public bool IsInGameArea(Vector3 targetPos)
+    {
+        GameObject gameArea = GameObject.FindGameObjectWithTag("GameArea"); 
+        if (gameArea.transform.position == targetPos)
+        {
+           return true;
+        }
+        return false;
     }
 }

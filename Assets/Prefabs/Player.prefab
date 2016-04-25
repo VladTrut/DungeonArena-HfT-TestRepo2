@@ -921,6 +921,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxSpeed: 50
+  mapObjectName: MapFourRooms
+  spawnAreaAdaption: 10
   lookingLeft: 1
 --- !u!212 &21209086
 SpriteRenderer:

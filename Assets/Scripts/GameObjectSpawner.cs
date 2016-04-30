@@ -1,43 +1,61 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class GameObjectSpawner : MonoBehaviour {
-
-    public void spawnPlayer(GameObject[] spawnPoints, int spawnPointCount)
+namespace UnityTest
+{
+    public class GameObjectSpawner : MonoBehaviour
     {
-        if(spawnPoints==null || spawnPoints.Length<=0)
-        {
-            return;
-        }
-        int index = 0;
-        foreach (GameObject current in spawnPoints)
-        {
-            Vector3 spawnPosition = current.transform.position;
 
-            if (IsEmptyPosition(spawnPosition))
+        public Vector3 spawnPlayer(GameObject[] spawnPoints, int spawnPointCount, GameObject playerObject)
+        {
+            Vector3 currentPlayerSpawnPosition = new Vector3(0, 0, 0);//required for testing
+            if (playerObject != null)
             {
-                transform.position = spawnPosition;
-                break;
+                currentPlayerSpawnPosition = playerObject.transform.position;
+            }
+            else
+            {
+                currentPlayerSpawnPosition = transform.position;
             }
 
-            if (index >= spawnPointCount)
+            int index = 0;
+            foreach (GameObject current in spawnPoints)
             {
-                spawnPlayer(spawnPoints, spawnPointCount); //Wiederholen bis Spieler gespawned
-                break;
+                Vector3 spawnPosition = current.transform.position;
+
+                if (IsEmptyPosition(spawnPosition) && playerObject == null)
+                {
+                    transform.position = spawnPosition;
+                    currentPlayerSpawnPosition = spawnPosition;
+                    break;
+                }
+                else if (IsEmptyPosition(spawnPosition) && playerObject != null)
+                {
+                    playerObject.transform.position = spawnPosition;
+                    currentPlayerSpawnPosition = spawnPosition;
+                    break;
+                }
+
+                if (index >= spawnPointCount)
+                {
+                    spawnPlayer(spawnPoints, spawnPointCount, playerObject); //Wiederholen bis Spieler gespawned
+                    break;
+                }
+
+                index++;
             }
-
-            index++;
+            return currentPlayerSpawnPosition;
         }
-    }
 
-    private bool IsEmptyPosition(Vector3 targetPos)
-    {
-        GameObject[] allMovableThings = GameObject.FindGameObjectsWithTag("Physical"); //returns all game object with tag "Physical"
-        foreach (GameObject current in allMovableThings)
+        private bool IsEmptyPosition(Vector3 targetPos)
         {
-            if (current.transform.position == targetPos)
-                return false;
+            GameObject[] allMovableThings = GameObject.FindGameObjectsWithTag("Physical"); //returns all game object with tag "Physical"
+            foreach (GameObject current in allMovableThings)
+            {
+                if (current.transform.position == targetPos)
+                    return false;
+            }
+            return true;
         }
-        return true;
     }
 }

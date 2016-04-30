@@ -13,7 +13,7 @@ public class NetworkManTest : NetworkBehaviour
 	public void SetUp()
 	{
 		networkManager = new NetworkMan ();
-		networkManager.Initialize ();
+		networkManager.InitializeMatchMaking ();
 	}
 
 	[TearDown]

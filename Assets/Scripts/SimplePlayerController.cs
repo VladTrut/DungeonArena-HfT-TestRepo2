@@ -34,16 +34,11 @@ public class SimplePlayerController : MonoBehaviour
 		else
 			anim.SetBool ("Running", false);
 
-		bool attacking = anim.GetBool("Attacking");
 		// Trigger Attacking
-		if (Input.GetButtonDown ("Fire1") && !attacking)
+		if (Input.GetButtonDown ("Fire1"))
 			anim.SetTrigger ("Attacking");
 
-		// If we're currently attacking, don't move around!
-		if (!attacking) 
-		{
-			rb2d.AddForce (new Vector2 (x, y) * speed);
-		}
+		rb2d.AddForce (new Vector2 (x, y) * speed);
 	}
 
 	void Flip ()

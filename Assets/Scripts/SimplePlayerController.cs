@@ -53,4 +53,9 @@ public class SimplePlayerController : MonoBehaviour
 		myScale.x = myScale.x * -1; //myScale.x *= -1;
 		transform.localScale = myScale;
 	}
+
+	public void SetSpeed(float speed)
+	{
+		this.speed = speed;
+	}
 }

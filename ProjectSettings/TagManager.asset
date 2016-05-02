@@ -4,7 +4,10 @@
 TagManager:
   serializedVersion: 2
   tags:
+  - PlayerSpawnPoint
+  - Physical
   - CameraCollisionTarget
+  - DestructableEntity
   layers:
   - Default
   - TransparentFX

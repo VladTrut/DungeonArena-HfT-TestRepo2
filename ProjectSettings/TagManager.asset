@@ -5,8 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - CameraCollisionTarget
-  - Physical
-    PlayerSpawnPoint  layers:
+  layers:
   - Default
   - TransparentFX
   - Ignore Raycast

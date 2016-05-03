@@ -1,5 +1,20 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &108410
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 405732}
+  m_Layer: 9
+  m_Name: BatSpawn4
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &108970
 GameObject:
   m_ObjectHideFlags: 1
@@ -34,6 +49,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &119832
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 440928}
+  m_Layer: 9
+  m_Name: BatSpawn2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &123484
 GameObject:
   m_ObjectHideFlags: 0
@@ -43,9 +73,24 @@ GameObject:
   m_Component:
   - 4: {fileID: 476172}
   - 61: {fileID: 6137136}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Chair (2)
   m_TagString: Physical
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &135744
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 400796}
+  m_Layer: 9
+  m_Name: BatSpawn1
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -59,9 +104,9 @@ GameObject:
   m_Component:
   - 4: {fileID: 493442}
   - 61: {fileID: 6130386}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Chair
-  m_TagString: Untagged
+  m_TagString: Physical
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -75,9 +120,9 @@ GameObject:
   m_Component:
   - 4: {fileID: 471648}
   - 61: {fileID: 6173474}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Chest
-  m_TagString: Untagged
+  m_TagString: Physical
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -94,6 +139,21 @@ GameObject:
   - 114: {fileID: 11496452}
   m_Layer: 0
   m_Name: TopLeftDetector
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &172816
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 437836}
+  m_Layer: 9
+  m_Name: BatSpawn3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -125,9 +185,9 @@ GameObject:
   m_Component:
   - 4: {fileID: 458256}
   - 61: {fileID: 6158700}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Chair (1)
-  m_TagString: Untagged
+  m_TagString: Physical
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -156,9 +216,9 @@ GameObject:
   m_Component:
   - 4: {fileID: 432712}
   - 61: {fileID: 6185158}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Chest (1)
-  m_TagString: Untagged
+  m_TagString: Physical
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -172,9 +232,9 @@ GameObject:
   m_Component:
   - 4: {fileID: 425222}
   - 61: {fileID: 6161946}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Chest (2)
-  m_TagString: Untagged
+  m_TagString: Physical
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -189,13 +249,26 @@ GameObject:
   - 4: {fileID: 417728}
   - 212: {fileID: 21233348}
   - 68: {fileID: 6882132}
-  m_Layer: 0
+  - 114: {fileID: 11450156}
+  m_Layer: 9
   m_Name: MapFourRooms
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!4 &400796
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 135744}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3, y: 2, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 417728}
+  m_RootOrder: 7
 --- !u!4 &404670
 Transform:
   m_ObjectHideFlags: 1
@@ -208,6 +281,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 431646}
   m_RootOrder: 1
+--- !u!4 &405732
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 108410}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5, y: -2, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 417728}
+  m_RootOrder: 10
 --- !u!4 &409976
 Transform:
   m_ObjectHideFlags: 1
@@ -249,6 +334,10 @@ Transform:
   - {fileID: 425222}
   - {fileID: 471648}
   - {fileID: 431646}
+  - {fileID: 400796}
+  - {fileID: 440928}
+  - {fileID: 437836}
+  - {fileID: 405732}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!4 &418216
@@ -303,6 +392,30 @@ Transform:
   m_Children: []
   m_Father: {fileID: 417728}
   m_RootOrder: 3
+--- !u!4 &437836
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 172816}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2, y: -4, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 417728}
+  m_RootOrder: 9
+--- !u!4 &440928
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 119832}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3, y: 3, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 417728}
+  m_RootOrder: 8
 --- !u!4 &458256
 Transform:
   m_ObjectHideFlags: 1
@@ -574,6 +687,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraTarget: {fileID: 409976}
+--- !u!114 &11450156
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 195364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc0fec9be36424025a8536f44636c509, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemySpawns:
+  - {fileID: 400796}
+  - {fileID: 440928}
+  - {fileID: 437836}
+  - {fileID: 405732}
+  Bat: {fileID: 158414, guid: b6c9246b6bcd64a068b0734a4311e428, type: 2}
 --- !u!114 &11496452
 MonoBehaviour:
   m_ObjectHideFlags: 1

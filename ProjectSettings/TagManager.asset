@@ -8,6 +8,10 @@ TagManager:
   - Physical
   - CameraCollisionTarget
   - DestructableEntity
+  - AttackTrigger
+  - Enemy
+  - HitBox
+  - BatSight
   layers:
   - Default
   - TransparentFX
@@ -17,8 +21,8 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
+  - Enemy
+  - Ground
   - 
   - 
   - 

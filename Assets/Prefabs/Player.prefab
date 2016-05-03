@@ -172,7 +172,7 @@ GameObject:
   - 114: {fileID: 11481900}
   m_Layer: 0
   m_Name: Sword Body
-  m_TagString: Untagged
+  m_TagString: AttackTrigger
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -449,7 +449,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 121898}
-  m_LocalRotation: {x: 0, y: 0, z: -0.31445992, w: 0.94927084}
+  m_LocalRotation: {x: 0, y: 0, z: -0.31462353, w: 0.9492166}
   m_LocalPosition: {x: -0.036247164, y: -0.18727681, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -587,7 +587,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 198642}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.35438675, y: -1.7213182, z: 0}
+  m_LocalPosition: {x: -0.57416606, y: -2.1521215, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 401714}
@@ -629,7 +629,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 183612}
-  m_LocalRotation: {x: 0, y: 0, z: -0.4070158, w: -0.91342115}
+  m_LocalRotation: {x: 0, y: 0, z: -0.40717325, w: -0.913351}
   m_LocalPosition: {x: -0.024164766, y: -0.22352389, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []

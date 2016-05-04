@@ -34,11 +34,16 @@ public class SimplePlayerController : MonoBehaviour
 		else
 			anim.SetBool ("Running", false);
 
+		bool attacking = anim.GetBool("Attacking");
 		// Trigger Attacking
-		if (Input.GetButtonDown ("Fire1"))
+		if (Input.GetButtonDown ("Fire1") && !attacking)
 			anim.SetTrigger ("Attacking");
 
-		rb2d.AddForce (new Vector2 (x, y) * speed);
+		// If we're currently attacking, don't move around!
+		if (!attacking) 
+		{
+			rb2d.AddForce (new Vector2 (x, y) * speed);
+		}
 	}
 
 	void Flip ()
@@ -47,5 +52,10 @@ public class SimplePlayerController : MonoBehaviour
 		Vector3 myScale = transform.localScale;
 		myScale.x = myScale.x * -1; //myScale.x *= -1;
 		transform.localScale = myScale;
+	}
+
+	public void SetSpeed(float speed)
+	{
+		this.speed = speed;
 	}
 }

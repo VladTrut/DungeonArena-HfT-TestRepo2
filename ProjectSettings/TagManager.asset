@@ -4,7 +4,14 @@
 TagManager:
   serializedVersion: 2
   tags:
+  - PlayerSpawnPoint
+  - Physical
   - CameraCollisionTarget
+  - DestructableEntity
+  - AttackTrigger
+  - Enemy
+  - HitBox
+  - BatSight
   layers:
   - Default
   - TransparentFX
@@ -14,8 +21,8 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
+  - Enemy
+  - Ground
   - 
   - 
   - 

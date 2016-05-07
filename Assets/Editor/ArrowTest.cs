@@ -211,6 +211,5 @@ namespace UnityTest
 		{
 			arrow = null;
 		}
-
 	}
 }

@@ -4,6 +4,10 @@ using System.Collections;
 
 namespace UnityTest
 {
+	/// <summary>
+	/// The AppQuit class manages the destruction of the match on the master server.
+	/// </summary>
+	/// <author>Marcel Mayer</author>
 	public class AppQuit : NetworkBehaviour 
 	{
 		/// <summary>
@@ -12,7 +16,10 @@ namespace UnityTest
 		void OnApplicationQuit()
 		{
 			NetworkMan networkman = gameObject.GetComponent<NetworkMan> ();
-			networkman.DestroyMatch ();
+			if (networkman != null) 
+			{
+				networkman.DestroyMatch ();
+			}
 		}
 	}
 }

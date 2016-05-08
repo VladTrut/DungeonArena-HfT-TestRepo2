@@ -17,7 +17,7 @@ namespace UnityTest
 
 		void Start ()
 		{
-			rb2d = GetComponent<Rigidbody2D> (); //Reference auf das Componont
+            rb2d = GetComponent<Rigidbody2D> (); //Reference auf das Componont
 			anim = GetComponent<Animator> ();
 
 		}
@@ -62,15 +62,5 @@ namespace UnityTest
 			myScale.x = myScale.x * -1; //myScale.x *= -1;
 			transform.localScale = myScale;
 		}
-
-		//Networking: Initialisiert den lokalen Spieler.
-		public override void OnStartLocalPlayer()
-		{
-			GameObject[] spawnPoints = GameObject.FindGameObjectsWithTag("PlayerSpawnPoint"); //Alle Spawnobjekte(Gameobjects) müssen den Tag "PlayerSpawnPoint" haben!
-			int spawnPointCount = spawnPoints.Length;
-
-			GameObjectSpawner sn = gameObject.GetComponent<GameObjectSpawner>();
-			sn.spawnPlayer(spawnPoints, spawnPointCount, null); //null damit er den Standard Wert nimmt
-		}
-	}
+    }
 }

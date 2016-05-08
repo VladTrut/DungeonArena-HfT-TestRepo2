@@ -18,31 +18,21 @@ namespace UnityTest
                 currentPlayerSpawnPosition = transform.position;
             }
 
-            int index = 0;
-            foreach (GameObject current in spawnPoints)
+            int randomSpawnId = new System.Random().Next(0, spawnPointCount);
+            Vector3 spawnPosition = spawnPoints[randomSpawnId].transform.position;
+
+            if (IsEmptyPosition(spawnPosition) && playerObject == null) //Nimm lokalen Spieler
             {
-                Vector3 spawnPosition = current.transform.position;
-
-                if (IsEmptyPosition(spawnPosition) && playerObject == null)
-                {
-                    transform.position = spawnPosition;
-                    currentPlayerSpawnPosition = spawnPosition;
-                    break;
-                }
-                else if (IsEmptyPosition(spawnPosition) && playerObject != null)
-                {
-                    playerObject.transform.position = spawnPosition;
-                    currentPlayerSpawnPosition = spawnPosition;
-                    break;
-                }
-
-                if (index >= spawnPointCount)
-                {
-                    spawnPlayer(spawnPoints, spawnPointCount, playerObject); //Wiederholen bis Spieler gespawned
-                    break;
-                }
-
-                index++;
+                transform.position = spawnPosition;
+                currentPlayerSpawnPosition = spawnPosition;
+            }
+            else if (IsEmptyPosition(spawnPosition) && playerObject != null)//Nimm vorgegebenen Spieler
+            {
+                playerObject.transform.position = spawnPosition;
+                currentPlayerSpawnPosition = spawnPosition;
+            }else
+            {
+                spawnPlayer(spawnPoints, spawnPointCount, playerObject);//Solange wiederholen bis freier Platz gefunden
             }
             return currentPlayerSpawnPosition;
         }

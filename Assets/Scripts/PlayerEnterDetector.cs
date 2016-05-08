@@ -1,7 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.Networking;
 
-public class PlayerEnterDetector : MonoBehaviour {
+public class PlayerEnterDetector : NetworkBehaviour
+{
 
 	public Transform cameraTarget;
 

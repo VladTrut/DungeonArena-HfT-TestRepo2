@@ -12,6 +12,7 @@ TagManager:
   - Enemy
   - HitBox
   - BatSight
+  - CameraCollisionDetector
   layers:
   - Default
   - TransparentFX

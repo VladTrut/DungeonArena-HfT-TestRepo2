@@ -1,10 +1,13 @@
 ﻿using UnityEngine;
+using UnityEngine.Networking;
 using System.Collections;
 
-public class PlayerStatus : MonoBehaviour {
+public class PlayerStatus : NetworkBehaviour {
 
 	public WeaponDamage weaponDamage;
 	//public SimplePlayerController simplePlayerController;
+
+	private StatusBar playerGUI;
 
 	public float maxHealth;
 	public float minHealth;
@@ -24,7 +27,19 @@ public class PlayerStatus : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-	
+		weaponDamage.SetCurrentAttackValue (currentAttack);
+		GameObject gui = GameObject.Find ("MainContainer");
+		playerGUI = gui.GetComponent<StatusBar> ();
+		if (isLocalPlayer) {
+			playerGUI.SetMaxHealth (maxHealth);
+			playerGUI.SetMaxAttack (maxAttack);
+			playerGUI.SetMaxDefense(maxDefence);
+			playerGUI.SetMaxSpeed (maxSpeed);
+			playerGUI.SetCurrentHealth (currentHealth);
+			playerGUI.SetCurrentAttack (currentAttack);
+			playerGUI.SetCurrentDefense (currentDefence);
+			playerGUI.SetCurrentSpeed (currentSpeed);
+		}
 	}
 	
 	// Update is called once per frame
@@ -65,6 +80,9 @@ public class PlayerStatus : MonoBehaviour {
 				currentHealth = remainingHealth;
 			}
 		}
+		if (isLocalPlayer) {
+			playerGUI.SetCurrentHealth (currentHealth);
+		}
 	}
 
 	/// <summary>
@@ -84,6 +102,9 @@ public class PlayerStatus : MonoBehaviour {
 			}
 		}
 		weaponDamage.SetCurrentAttackValue (currentAttack);
+		if (isLocalPlayer) {
+			playerGUI.SetCurrentAttack (currentAttack);
+		}
 	}
 
 	/// <summary>
@@ -101,6 +122,9 @@ public class PlayerStatus : MonoBehaviour {
 			else {
 				currentDefence = amount;
 			}
+		}
+		if (isLocalPlayer) {
+			playerGUI.SetCurrentDefense (currentDefence);
 		}
 	}
 
@@ -121,6 +145,9 @@ public class PlayerStatus : MonoBehaviour {
 			}
 		}
 		//simplePlayerController.SetSpeed (currentSpeed);
+		if (isLocalPlayer) {
+			playerGUI.SetCurrentSpeed (currentSpeed);
+		}
 	}
 
 }

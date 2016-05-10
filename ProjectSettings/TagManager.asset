@@ -12,6 +12,8 @@ TagManager:
   - Enemy
   - HitBox
   - BatSight
+  - Arrow
+  - Map
   layers:
   - Default
   - TransparentFX

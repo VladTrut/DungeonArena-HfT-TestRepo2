@@ -11,16 +11,16 @@ namespace UnityTest
 		public float maxSpeed = 10.0f;
 
 		private Rigidbody2D rb2d;
-        private NetworkAnimator networkAnim;
-
-        [HideInInspector] //loockingRight wird im Inspector nicht angezeigt.
+		private Animator anim;
+		[HideInInspector] //loockingRight wird im Inspector nicht angezeigt.
 		public bool lookingLeft = true;
 
 		void Start ()
 		{
 			rb2d = GetComponent<Rigidbody2D> (); //Reference auf das Componont
-            networkAnim = GetComponent<NetworkAnimator>();
-        }
+			anim = GetComponent<Animator> ();
+
+		}
 
 		void Update ()
 		{
@@ -31,7 +31,7 @@ namespace UnityTest
 		{
 			if (!isLocalPlayer)
 			{
-                return;
+				return;
 			}
 
 			float inputH = CrossPlatformInputManager.GetAxis ("Horizontal");
@@ -42,26 +42,17 @@ namespace UnityTest
 
 			// set running animation
 			if (inputH != 0f || inputV != 0f)
-            networkAnim.animator.SetBool("Running", true);
-				//anim.SetBool ("Running", true);
+				anim.SetBool ("Running", true);
 			else
-                networkAnim.animator.SetBool ("Running", false);
+				anim.SetBool ("Running", false);
 
 			if ((inputH > 0 && lookingLeft) || (inputH < 0 && !lookingLeft)) //Falls geht nach Rechts aber guckt nach Links (und umgekehrt)			
 				Flip ();
 
-            bool attacking = networkAnim.animator.GetBool("Attacking");
-            // Trigger Attacking
-            if (Input.GetButtonDown("Fire1") && !attacking)
-                networkAnim.SetTrigger("Attacking");
-            
-
-            // If we're currently attacking, don't move around!
-            if (!attacking)
-            {
-                rb2d.AddForce(new Vector2(inputH, inputV) * maxSpeed);
-            }
-        }
+			if (CrossPlatformInputManager.GetButton ("Attack")) {
+				anim.SetTrigger ("Attacking");
+			}
+		}
 
 
 		public void Flip ()

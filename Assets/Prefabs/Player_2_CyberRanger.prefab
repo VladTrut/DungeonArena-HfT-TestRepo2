@@ -250,6 +250,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &144710
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 469272}
+  - 61: {fileID: 6168970}
+  - 114: {fileID: 11418388}
+  m_Layer: 0
+  m_Name: KnifeBody
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
 --- !u!1 &146502
 GameObject:
   m_ObjectHideFlags: 1
@@ -529,8 +546,12 @@ GameObject:
   - 61: {fileID: 6155986}
   - 114: {fileID: 11402632}
   - 114: {fileID: 11433614}
+  - 114: {fileID: 11452774}
+  - 114: {fileID: 11413422}
+  - 114: {fileID: 11467324}
+  - 114: {fileID: 11400172}
   m_Layer: 0
-  m_Name: CyberRanger
+  m_Name: Player_2_CyberRanger
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -782,7 +803,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: -0.63231236, w: 0.77471364}
   m_LocalPosition: {x: 0.45289978, y: -0.030440833, z: -0.018000001}
   m_LocalScale: {x: 0.9999999, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 469272}
   m_Father: {fileID: 493086}
   m_RootOrder: 0
 --- !u!4 &437412
@@ -1021,6 +1043,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 464736}
   m_RootOrder: 3
+--- !u!4 &469272
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 144710}
+  m_LocalRotation: {x: 0, y: 0, z: 0.008890047, w: 0.9999605}
+  m_LocalPosition: {x: 0.000000034845925, y: -0.00000022006049, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 435112}
+  m_RootOrder: 0
 --- !u!4 &472902
 Transform:
   m_ObjectHideFlags: 1
@@ -1179,6 +1213,20 @@ BoxCollider2D:
   m_Offset: {x: 0.25955707, y: -3.0560808}
   serializedVersion: 2
   m_Size: {x: 2.925747, y: 1.2176913}
+--- !u!61 &6168970
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 144710}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 0.0000038184226, y: 1.4973938}
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1.9362981}
 --- !u!95 &9507194
 Animator:
   serializedVersion: 3
@@ -1196,6 +1244,38 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &11400172
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 191948}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: 870353891bb340e2b2a9c8707e7419ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 51
+    i1: 79
+    i2: 134
+    i3: 77
+    i4: 144
+    i5: 96
+    i6: 36
+    i7: 85
+    i8: 74
+    i9: 81
+    i10: 56
+    i11: 128
+    i12: 157
+    i13: 245
+    i14: 134
+    i15: 18
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 1
 --- !u!114 &11402632
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1209,6 +1289,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sortingOrder: 1
   sprite: {fileID: 0}
+--- !u!114 &11413422
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 191948}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5754cf83fa90c463f9afdf85bce55fd3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &11418388
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 144710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f89031236c0a4d8fa7812651cb18b4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11433614
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1244,8 +1346,51 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60386d19d221c464aaeebc0cf2d41549, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeed: 40
+  maxSpeed: 50
   lookingRight: 1
+--- !u!114 &11452774
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 191948}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8147ca6713f5a47c69034bebcb5b315f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponDamage: {fileID: 11418388}
+  maxHealth: 0
+  minHealth: 0
+  currentHealth: 0
+  maxAttack: 10
+  minAttack: 1
+  currentAttack: 0
+  maxDefence: 0
+  minDefence: 0
+  currentDefence: 0
+  maxSpeed: 0
+  minSpeed: 0
+  currentSpeed: 0
+--- !u!114 &11467324
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 191948}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1590678366, guid: 870353891bb340e2b2a9c8707e7419ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Animator: {fileID: 9507194}
+  m_ParameterSendBits: 15
+  param0: 
+  param1: 
+  param2: 
+  param3: 
+  param4: 
+  param5: 
 --- !u!212 &21202058
 SpriteRenderer:
   m_ObjectHideFlags: 1

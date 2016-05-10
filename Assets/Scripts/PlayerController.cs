@@ -11,7 +11,7 @@ using System.Collections;
 using UnityStandardAssets.CrossPlatformInput; 
 using UnityEngine.Networking;
 
-public class PlayerController : MonoBehaviour //NetworkBehaviour
+public class PlayerController : NetworkBehaviour
 {
 
 	public float maxSpeed = 50.0f; //Dies Wert muesste eine Methode der Classe "Character" übergeben.

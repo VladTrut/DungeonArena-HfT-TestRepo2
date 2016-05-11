@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.Networking;
+using UnityTest;
 
 public class PlayerEnterDetector : NetworkBehaviour
 {
@@ -29,12 +30,13 @@ public class PlayerEnterDetector : NetworkBehaviour
 	/// <param name="other">Other.</param>
 	public bool CheckIfCollisionObjectIsCameraTarget(Collider2D other){
 		if (other.tag == "CameraCollisionTarget") {
-			Vector3 newCameraPosition = new Vector3 (cameraTarget.position.x, cameraTarget.position.y, Camera.main.transform.position.z);
-			Camera.main.SendMessage ("changeDestination", newCameraPosition);
-			return true;
-		} else {
-			return false;
+			if (other.gameObject.GetComponentInParent<PlayerSetup> ().isLocalPlayer) {
+				Vector3 newCameraPosition = new Vector3 (cameraTarget.position.x, cameraTarget.position.y, Camera.main.transform.position.z);
+				Camera.main.SendMessage ("changeDestination", newCameraPosition);
+				return true;
+			}
 		}
+		return false;
 	}
 
 }

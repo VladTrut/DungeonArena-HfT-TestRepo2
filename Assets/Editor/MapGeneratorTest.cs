@@ -26,7 +26,7 @@ public class MapGeneratorTest {
 		MazeRoom testRoom = new MazeRoom ();
 		testRoom.NorthWall = false;
 		testRoom.SouthWall = false;
-		string shouldResult = "0101-A";
+		string shouldResult = "1010-A";
 		string result = MazeAlgorithm.MapMazeRoomToPrefab (testRoom);
 		Assert.AreEqual (result, shouldResult);
 	}

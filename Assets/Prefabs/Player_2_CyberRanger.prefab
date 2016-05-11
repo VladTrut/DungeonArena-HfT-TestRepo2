@@ -557,7 +557,6 @@ GameObject:
   - 4: {fileID: 405672}
   - 95: {fileID: 9507194}
   - 114: {fileID: 11444038}
-  - 114: {fileID: 11444656}
   - 50: {fileID: 5022690}
   - 61: {fileID: 6155986}
   - 114: {fileID: 11402632}
@@ -566,6 +565,7 @@ GameObject:
   - 114: {fileID: 11413422}
   - 114: {fileID: 11467324}
   - 114: {fileID: 11400172}
+  - 114: {fileID: 11462842}
   m_Layer: 0
   m_Name: Player_2_CyberRanger
   m_TagString: Player
@@ -600,7 +600,7 @@ GameObject:
   m_Layer: 0
   m_Name: ArrowSpawnPoint
   m_TagString: Untagged
-  m_Icon: {fileID: 8467475693731670952, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -712,7 +712,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 191948}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.5709958, y: -1.5524104, z: 0}
+  m_LocalPosition: {x: -1.8517399, y: -0.54281694, z: 0}
   m_LocalScale: {x: 0.43, y: 0.43, z: 1}
   m_Children:
   - {fileID: 464736}
@@ -1406,19 +1406,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sortingOrder: 0
   applySpriterZOrder: 0
---- !u!114 &11444656
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 191948}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 60386d19d221c464aaeebc0cf2d41549, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxSpeed: 50
-  lookingRight: 1
 --- !u!114 &11452774
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1431,6 +1418,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponDamage: {fileID: 11418388}
+  distanceWeaponDamage: {fileID: 0}
   maxHealth: 0
   minHealth: 0
   currentHealth: 0
@@ -1443,6 +1431,22 @@ MonoBehaviour:
   maxSpeed: 0
   minSpeed: 0
   currentSpeed: 0
+--- !u!114 &11462842
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 191948}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60386d19d221c464aaeebc0cf2d41549, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxSpeed: 50
+  arrowPrefab: {fileID: 172136, guid: eb20448d5001e45589691e4da2077b16, type: 2}
+  spawnPoint: {fileID: 415358}
+  arrowSpeed: 100
+  lookingRight: 1
 --- !u!114 &11467324
 MonoBehaviour:
   m_ObjectHideFlags: 1

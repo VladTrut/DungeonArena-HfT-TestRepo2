@@ -4,6 +4,8 @@ using System.Collections;
 public class PlayerStatus : MonoBehaviour {
 
 	public WeaponDamage weaponDamage;
+	public WeaponDamage distanceWeaponDamage;
+
 	//public SimplePlayerController simplePlayerController;
 
 	public float maxHealth;
@@ -84,6 +86,7 @@ public class PlayerStatus : MonoBehaviour {
 			}
 		}
 		weaponDamage.SetCurrentAttackValue (currentAttack);
+		distanceWeaponDamage.SetCurrentAttackValue (currentAttack);
 	}
 
 	/// <summary>

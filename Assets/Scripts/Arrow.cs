@@ -63,7 +63,7 @@ namespace UnityTest
 			foreach (var player in GameObject.FindGameObjectsWithTag("Player")) 
 			{
 				ArrowSpawner arrowSpawner = player.GetComponent<ArrowSpawner> ();
-				arrowSpawner.InitializeArrows ();
+                arrowSpawner.InitializeArrows ();
 			}
 		}
 

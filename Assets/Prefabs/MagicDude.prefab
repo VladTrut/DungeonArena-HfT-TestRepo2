@@ -46,6 +46,12 @@ GameObject:
   - 61: {fileID: 6118616}
   - 114: {fileID: 11472670}
   - 114: {fileID: 11495500}
+  - 114: {fileID: 11481552}
+  - 114: {fileID: 11474526}
+  - 114: {fileID: 11404952}
+  - 114: {fileID: 11458692}
+  - 114: {fileID: 11422092}
+  - 114: {fileID: 11489632}
   m_Layer: 0
   m_Name: MagicDude
   m_TagString: Untagged
@@ -920,6 +926,25 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &11404952
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 117172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1590678366, guid: 870353891bb340e2b2a9c8707e7419ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Animator: {fileID: 9575208}
+  m_ParameterSendBits: 7
+  param0: 
+  param1: 
+  param2: 
+  param3: 
+  param4: 
+  param5: 
 --- !u!114 &11420846
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -936,6 +961,41 @@ MonoBehaviour:
   target: {fileID: 415162}
   endTransform: {fileID: 481316}
   angleLimits: []
+--- !u!114 &11422092
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 117172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8147ca6713f5a47c69034bebcb5b315f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponDamage: {fileID: 0}
+  maxHealth: 0
+  minHealth: 0
+  currentHealth: 0
+  maxAttack: 0
+  minAttack: 0
+  currentAttack: 0
+  maxDefence: 0
+  minDefence: 0
+  currentDefence: 0
+  maxSpeed: 0
+  minSpeed: 0
+  currentSpeed: 0
+--- !u!114 &11458692
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 117172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5754cf83fa90c463f9afdf85bce55fd3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11464966
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -974,20 +1034,84 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 117172}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a2098bb1896954c908daf41d4c160aec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   maxSpeed: 40
   lookingLeft: 1
---- !u!114 &11495500
+--- !u!114 &11474526
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 117172}
   m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1768714887, guid: 870353891bb340e2b2a9c8707e7419ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_TransformSyncMode: 2
+  m_SendInterval: 0.1
+  m_SyncRotationAxis: 3
+  m_RotationSyncCompression: 0
+  m_SyncSpin: 0
+  m_MovementTheshold: 0.001
+  m_SnapThreshold: 5
+  m_InterpolateRotation: 1
+  m_InterpolateMovement: 1
+--- !u!114 &11481552
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 117172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: 870353891bb340e2b2a9c8707e7419ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 56
+    i1: 37
+    i2: 171
+    i3: 164
+    i4: 245
+    i5: 253
+    i6: 100
+    i7: 108
+    i8: 89
+    i9: 139
+    i10: 224
+    i11: 131
+    i12: 18
+    i13: 225
+    i14: 188
+    i15: 124
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 1
+--- !u!114 &11489632
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 117172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 920e31337158e43dd9737df6bb554b5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  arrowPrefab: {fileID: 165320, guid: b9885243584b2449eab7ba41f69576b5, type: 2}
+--- !u!114 &11495500
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 117172}
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2858758907cb94151a0f17f9865ea27e, type: 3}
   m_Name: 

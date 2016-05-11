@@ -11,14 +11,14 @@ namespace UnityTest
 		public float maxSpeed = 10.0f;
 
 		private Rigidbody2D rb2d;
-		private Animator anim;
+		private NetworkAnimator anim;
 		[HideInInspector] //loockingRight wird im Inspector nicht angezeigt.
 		public bool lookingLeft = true;
 
 		void Start ()
 		{
 			rb2d = GetComponent<Rigidbody2D> (); //Reference auf das Componont
-			anim = GetComponent<Animator> ();
+			anim = GetComponent<NetworkAnimator> ();
 
 		}
 
@@ -42,9 +42,9 @@ namespace UnityTest
 
 			// set running animation
 			if (inputH != 0f || inputV != 0f)
-				anim.SetBool ("Running", true);
+				anim.animator.SetBool ("Running", true);
 			else
-				anim.SetBool ("Running", false);
+				anim.animator.SetBool ("Running", false);
 
 			if ((inputH > 0 && lookingLeft) || (inputH < 0 && !lookingLeft)) //Falls geht nach Rechts aber guckt nach Links (und umgekehrt)			
 				Flip ();

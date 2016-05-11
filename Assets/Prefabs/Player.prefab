@@ -419,6 +419,7 @@ GameObject:
   - 114: {fileID: 11455592}
   - 114: {fileID: 11488056}
   - 114: {fileID: 11409298}
+  - 114: {fileID: 11472522}
   - 114: {fileID: 11477646}
   m_Layer: 0
   m_Name: Player
@@ -1020,6 +1021,19 @@ MonoBehaviour:
   target: {fileID: 434428}
   endTransform: {fileID: 446164}
   angleLimits: []
+--- !u!114 &11472522
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 198642}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ada7efd248f3d1948ab9a22b560548f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  componentsToDisable:
+  - {fileID: 0}
 --- !u!114 &11477646
 MonoBehaviour:
   m_ObjectHideFlags: 1

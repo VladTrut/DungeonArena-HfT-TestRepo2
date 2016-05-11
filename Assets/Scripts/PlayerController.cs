@@ -18,8 +18,13 @@ public class PlayerController : NetworkBehaviour
 
 	private Rigidbody2D rb2d;
 	private Animator anim;
-	[HideInInspector] //loockingRight wird im Inspector nicht angezeigt.
+	private Collider2D other;
+
+	[HideInInspector] 
 	public bool lookingRight = true;
+
+	private bool isAttacking = false;
+	private bool isCollision = false;
 
 	void Start () 
 	{
@@ -32,21 +37,16 @@ public class PlayerController : NetworkBehaviour
 	{
 		if (CrossPlatformInputManager.GetButton("Attack")) //Attack soll immer in Update stehen
 		{
-			
-			//if(collision)
-				//anim.SetTrigger ("KnifeAttacking");
-			//else
-				anim.SetTrigger ("BowAttacking");
-			
+			isAttacking = true;	
 		}
 	}
 
 	void FixedUpdate () //fixierte Frame
 	{
-		/*if (!isLocalPlayer)
+		if (!isLocalPlayer)
 		{
 			return;
-		}*/
+		}
 
 		float inputHAbs = Mathf.Abs(CrossPlatformInputManager.GetAxis ("Horizontal")); //nur absolute Werte
 		float inputVAbs = Mathf.Abs(CrossPlatformInputManager.GetAxis ("Vertical"));
@@ -68,7 +68,20 @@ public class PlayerController : NetworkBehaviour
 
 		if ((inputH > 0 && !lookingRight) || (inputH < 0 && lookingRight)) //Falls geht nach Rechts aber guckt nach Links (und umgekehrt)			
 			Flip ();
-		
+
+
+		//Bow or knife attack
+		if (isAttacking && !isCollision) 
+		{
+			anim.SetTrigger ("BowAttacking");
+			isAttacking = false;
+		}
+
+		if (isAttacking && isCollision) 
+		{
+			anim.SetTrigger ("KnifeAttacking");
+			isAttacking = false;
+		}
 	}
 
 
@@ -80,9 +93,22 @@ public class PlayerController : NetworkBehaviour
 		transform.localScale = myScale;
 	}
 
-	void OnTriggerEnter(Collider other)
+	void OnCollisionEnter2D(Collision2D coll)
 	{
-		Debug.Log (gameObject.name + "was triggered by" + other.gameObject.name);
-			
+		if (coll.gameObject) 
+		{
+			isCollision = true;
+			Debug.Log ("Collision exist!");
+		} 
 	}
+
+	void OnCollisionExit2D(Collision2D coll)
+	{
+		if (coll.gameObject)  
+		{
+			isCollision = false;
+			Debug.Log ("Collision does not exist!");
+		}
+	}
+
 }

@@ -1029,11 +1029,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 198642}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ada7efd248f3d1948ab9a22b560548f9, type: 3}
+  m_Script: {fileID: 11500000, guid: 73eca100cb9d3654cbee55836055a3c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  componentsToDisable:
-  - {fileID: 0}
 --- !u!114 &11477646
 MonoBehaviour:
   m_ObjectHideFlags: 1

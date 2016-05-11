@@ -52,6 +52,7 @@ GameObject:
   - 114: {fileID: 11458692}
   - 114: {fileID: 11422092}
   - 114: {fileID: 11489632}
+  - 114: {fileID: 11494054}
   m_Layer: 0
   m_Name: MagicDude
   m_TagString: Untagged
@@ -1105,6 +1106,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrowPrefab: {fileID: 165320, guid: b9885243584b2449eab7ba41f69576b5, type: 2}
+--- !u!114 &11494054
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 117172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73eca100cb9d3654cbee55836055a3c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11495500
 MonoBehaviour:
   m_ObjectHideFlags: 1

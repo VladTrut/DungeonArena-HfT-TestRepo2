@@ -31,22 +31,12 @@ namespace UnityTest
             sn.spawnPlayer(spawnPoints, spawnPointCount, null); //null damit er den Standard Wert nimmt
         }
 
+        /**
+         * Wird gebraucht um Komponenten nicht lokaler Spieler auszuschalten. Nur benutzen wenn wirklich nötig!
+         */
         private List<Behaviour> GetComponentsToDisable()
         {
             List<Behaviour> list = new List<Behaviour>();
-
-            GameObject[] cameraCollissionDetector = GameObject.FindGameObjectsWithTag("CameraCollisionDetector");
-
-            for (int i = 0; i < cameraCollissionDetector.Length; i++)
-            {
-                list.Add(cameraCollissionDetector[i].GetComponent<PlayerEnterDetector>());
-            }
-
-            GameObject[] cameraMovement = GameObject.FindGameObjectsWithTag("MainCamera");
-            for (int i = 0; i < cameraMovement.Length; i++)
-            {
-                list.Add(cameraMovement[i].GetComponent<CameraMovement>());
-            }
 
             return list;
         }

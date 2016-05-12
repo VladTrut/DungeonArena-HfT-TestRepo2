@@ -28,7 +28,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 172136}
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071067}
-  m_LocalPosition: {x: 0.22554633, y: 1.1353428, z: 0}
+  m_LocalPosition: {x: -5.1900206, y: 0.45580417, z: 0}
   m_LocalScale: {x: 0.43, y: 0.43, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -88,6 +88,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 0
+  arrowHitSound: {fileID: 8300000, guid: 8ade4433541ad5d48b2a7a6abac5869b, type: 3}
 --- !u!114 &11478344
 MonoBehaviour:
   m_ObjectHideFlags: 1

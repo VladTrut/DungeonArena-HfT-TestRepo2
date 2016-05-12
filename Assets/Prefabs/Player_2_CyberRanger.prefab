@@ -712,7 +712,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 191948}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.8517399, y: -0.54281694, z: 0}
+  m_LocalPosition: {x: 3.7344642, y: -5.790734, z: 0}
   m_LocalScale: {x: 0.43, y: 0.43, z: 1}
   m_Children:
   - {fileID: 464736}
@@ -1446,6 +1446,12 @@ MonoBehaviour:
   arrowPrefab: {fileID: 172136, guid: eb20448d5001e45589691e4da2077b16, type: 2}
   spawnPoint: {fileID: 415358}
   lookingRight: 1
+  shootSound: {fileID: 8300000, guid: 4017e10126f1d7e4d916cd4a476080c4, type: 3}
+  knifeSound: {fileID: 8300000, guid: b76357a42d03a4722afcba74c3073136, type: 3}
+  stepSound: {fileID: 8300000, guid: 1ada9b016e503411e9edb4829a820155, type: 3}
+  deathSound: {fileID: 8300000, guid: 106a89b29a4844eeebe5ebada57bc709, type: 3}
+  stepSoundVolume: 0.5
+  shootSoundVolume: 0.5
 --- !u!114 &11467324
 MonoBehaviour:
   m_ObjectHideFlags: 1

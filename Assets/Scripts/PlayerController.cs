@@ -1,5 +1,5 @@
 ﻿/*
-*	Alte Klasse "JoystickMovement"
+* 
 *	Controller for Cyber Ranger
 *	Version: 2.0
 *	Autor: Vlad
@@ -26,6 +26,13 @@ public class PlayerController : NetworkBehaviour
 
 	private bool isAttacking = false;
 	private bool isCollision = false;
+
+	public AudioClip shootSound;
+	public AudioClip knifeSound;
+	public AudioClip stepSound;
+	public AudioClip deathSound;
+	public float stepSoundVolume = 0.5f;
+	public float shootSoundVolume = 0.5f;
 
 	void Start () 
 	{
@@ -91,14 +98,29 @@ public class PlayerController : NetworkBehaviour
 	{
 		if (lookingRight) 
 		{
-			GameObject arrow = (GameObject) Instantiate (arrowPrefab, spawnPoint.position, Quaternion.Euler(new Vector3 (0, 0, -90))); 
+			GameObject arrow = (GameObject) Instantiate (arrowPrefab, spawnPoint.position, Quaternion.Euler(new Vector3 (0, 0, 90))); 
 			arrow.GetComponent<ArrowCR>().SetDirection(Vector2.right);
+
+			AudioSource.PlayClipAtPoint (shootSound, transform.position, shootSoundVolume);
 		} 
 		else 
 		{
 			GameObject arrow = (GameObject) Instantiate (arrowPrefab, spawnPoint.position, Quaternion.Euler(new Vector3 (0, 0, -90)));  
 			arrow.GetComponent<ArrowCR>().SetDirection(Vector2.left);
+
+			AudioSource.PlayClipAtPoint (shootSound, transform.position, shootSoundVolume);
+
 		}
+	}
+
+	public void KnifeAttack()
+	{
+			AudioSource.PlayClipAtPoint (knifeSound, transform.position);
+	}
+
+	public void PlayStepSound()
+	{
+		AudioSource.PlayClipAtPoint (stepSound, transform.position, stepSoundVolume);
 	}
 
 	public void Flip()
@@ -116,6 +138,12 @@ public class PlayerController : NetworkBehaviour
 			isCollision = true;
 			Debug.Log ("Collision exist!");
 		} 
+
+		if (coll.gameObject.tag == "Bomb") 
+		{
+			anim.SetBool ("Dead", true);
+			AudioSource.PlayClipAtPoint (deathSound, transform.position);
+		}
 	}
 
 	void OnCollisionExit2D(Collision2D coll)

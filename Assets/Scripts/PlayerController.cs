@@ -17,14 +17,12 @@ public class PlayerController : NetworkBehaviour
 	public float maxSpeed = 50.0f; //Dies Wert muesste eine Methode der Classe "Character" übergeben.
 	public GameObject arrowPrefab;
 	public Transform spawnPoint;
-	public float arrowSpeed = 100f;
-
-	private Rigidbody2D rb2d;
-	private Animator anim;
-	private Collider2D other;
 
 	[HideInInspector] 
 	public bool lookingRight = true;
+
+	private Rigidbody2D rb2d;
+	private Animator anim;
 
 	private bool isAttacking = false;
 	private bool isCollision = false;
@@ -33,7 +31,6 @@ public class PlayerController : NetworkBehaviour
 	{
 		rb2d = GetComponent<Rigidbody2D> (); //Reference auf das Component
 		anim = GetComponent<Animator> ();
-
 	}
 
 	void Update () 
@@ -41,6 +38,7 @@ public class PlayerController : NetworkBehaviour
 		if (CrossPlatformInputManager.GetButton("Attack") && !isAttacking) //Attack soll immer in Update stehen
 		{
 			isAttacking = true;	
+			Attack ();
 		}
 	}
 
@@ -68,35 +66,17 @@ public class PlayerController : NetworkBehaviour
 
 		//Debug.Log (anim.GetFloat("Speed")); //für Debuging des Outputs des Joystiks
 
-
 		if ((inputH > 0 && !lookingRight) || (inputH < 0 && lookingRight)) //Falls geht nach Rechts aber guckt nach Links (und umgekehrt)			
 			Flip ();
 
+	}
 
+	public void Attack()
+	{
 		//Bow or knife attack
 		if (isAttacking && !isCollision) 
 		{
 			anim.SetTrigger ("BowAttacking");
-
-			if (lookingRight) 
-			{
-
-				GameObject arrow = (GameObject) Instantiate (arrowPrefab, spawnPoint.position, Quaternion.Euler(new Vector3 (0, 0, -90))); 
-				arrow.GetComponent<ArrowCR>().SetDirection(Vector2.right);
-
-				//GameObject arrow = (GameObject) Instantiate (arrowPrefab, spawnPoint.position, Quaternion.identity);
-
-				/*if (lookingRight)
-				arrow.GetComponent<Rigidbody2D> ().AddForce (Vector3.right * arrowSpeed);
-			else
-				arrow.GetComponent<Rigidbody2D> ().AddForce (Vector3.left * arrowSpeed);*/
-			} 
-			else 
-			{
-				GameObject arrow = (GameObject) Instantiate (arrowPrefab, spawnPoint.position, Quaternion.Euler(new Vector3 (0, 0, -90)));  
-				arrow.GetComponent<ArrowCR>().SetDirection(Vector2.left);
-			}
-
 			isAttacking = false;
 		}
 
@@ -107,11 +87,19 @@ public class PlayerController : NetworkBehaviour
 		}
 	}
 
-	/*public void ArrowShoot(int value)
+	public void BowAttack()
 	{
-		
-	}*/
-
+		if (lookingRight) 
+		{
+			GameObject arrow = (GameObject) Instantiate (arrowPrefab, spawnPoint.position, Quaternion.Euler(new Vector3 (0, 0, -90))); 
+			arrow.GetComponent<ArrowCR>().SetDirection(Vector2.right);
+		} 
+		else 
+		{
+			GameObject arrow = (GameObject) Instantiate (arrowPrefab, spawnPoint.position, Quaternion.Euler(new Vector3 (0, 0, -90)));  
+			arrow.GetComponent<ArrowCR>().SetDirection(Vector2.left);
+		}
+	}
 
 	public void Flip()
 	{

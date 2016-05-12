@@ -13,6 +13,7 @@ GameObject:
   - 114: {fileID: 11478344}
   - 61: {fileID: 6153234}
   - 114: {fileID: 11452408}
+  - 114: {fileID: 11468546}
   m_Layer: 0
   m_Name: ArrowCR
   m_TagString: Untagged
@@ -27,7 +28,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 172136}
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071067}
-  m_LocalPosition: {x: -5.825886, y: -1.0741796, z: 0}
+  m_LocalPosition: {x: 0.22554633, y: 1.1353428, z: 0}
   m_LocalScale: {x: 0.43, y: 0.43, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -75,13 +76,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrowSpeed: 0
---- !u!114 &11478344
+--- !u!114 &11468546
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 172136}
   m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3712a8dad07b84eedb1b1b1e90ce853e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 0
+--- !u!114 &11478344
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 172136}
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1f89031236c0a4d8fa7812651cb18b4a, type: 3}
   m_Name: 

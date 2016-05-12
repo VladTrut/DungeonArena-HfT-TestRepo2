@@ -22843,7 +22843,14 @@ AnimationClip:
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_GenerateMotionCurves: 0
-  m_Events: []
+  m_Events:
+  - time: 0.93333334
+    functionName: BowAttack
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
 --- !u!74 &7493322
 AnimationClip:
   m_ObjectHideFlags: 0
@@ -24798,6 +24805,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxSpeed: 50
+  arrowPrefab: {fileID: 0}
+  spawnPoint: {fileID: 0}
   lookingRight: 1
 --- !u!114 &11441070
 MonoBehaviour:

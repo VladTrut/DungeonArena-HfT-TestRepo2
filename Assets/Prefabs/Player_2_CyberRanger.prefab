@@ -1445,7 +1445,6 @@ MonoBehaviour:
   maxSpeed: 50
   arrowPrefab: {fileID: 172136, guid: eb20448d5001e45589691e4da2077b16, type: 2}
   spawnPoint: {fileID: 415358}
-  arrowSpeed: 100
   lookingRight: 1
 --- !u!114 &11467324
 MonoBehaviour:

@@ -1,13 +1,12 @@
 ﻿using UnityEngine;
-using UnityEngine.Networking;
 using System.Collections;
 
-public class PlayerStatus : NetworkBehaviour {
+public class PlayerStatus : MonoBehaviour {
 
 	public WeaponDamage weaponDamage;
-	//public SimplePlayerController simplePlayerController;
+	public WeaponDamage distanceWeaponDamage;
 
-	private StatusBar playerGUI;
+	//public SimplePlayerController simplePlayerController;
 
 	public float maxHealth;
 	public float minHealth;
@@ -27,19 +26,7 @@ public class PlayerStatus : NetworkBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		weaponDamage.SetCurrentAttackValue (currentAttack);
-		GameObject gui = GameObject.Find ("MainContainer");
-		playerGUI = gui.GetComponent<StatusBar> ();
-		if (isLocalPlayer) {
-			playerGUI.SetMaxHealth (maxHealth);
-			playerGUI.SetMaxAttack (maxAttack);
-			playerGUI.SetMaxDefense(maxDefence);
-			playerGUI.SetMaxSpeed (maxSpeed);
-			playerGUI.SetCurrentHealth (currentHealth);
-			playerGUI.SetCurrentAttack (currentAttack);
-			playerGUI.SetCurrentDefense (currentDefence);
-			playerGUI.SetCurrentSpeed (currentSpeed);
-		}
+	
 	}
 	
 	// Update is called once per frame
@@ -80,9 +67,6 @@ public class PlayerStatus : NetworkBehaviour {
 				currentHealth = remainingHealth;
 			}
 		}
-		if (isLocalPlayer) {
-			playerGUI.SetCurrentHealth (currentHealth);
-		}
 	}
 
 	/// <summary>
@@ -102,9 +86,7 @@ public class PlayerStatus : NetworkBehaviour {
 			}
 		}
 		weaponDamage.SetCurrentAttackValue (currentAttack);
-		if (isLocalPlayer) {
-			playerGUI.SetCurrentAttack (currentAttack);
-		}
+		distanceWeaponDamage.SetCurrentAttackValue (currentAttack);
 	}
 
 	/// <summary>
@@ -122,9 +104,6 @@ public class PlayerStatus : NetworkBehaviour {
 			else {
 				currentDefence = amount;
 			}
-		}
-		if (isLocalPlayer) {
-			playerGUI.SetCurrentDefense (currentDefence);
 		}
 	}
 
@@ -145,9 +124,6 @@ public class PlayerStatus : NetworkBehaviour {
 			}
 		}
 		//simplePlayerController.SetSpeed (currentSpeed);
-		if (isLocalPlayer) {
-			playerGUI.SetCurrentSpeed (currentSpeed);
-		}
 	}
 
 }
